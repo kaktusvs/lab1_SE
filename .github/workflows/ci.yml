@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  # 1. Джоб: Linter (Перевірка Dockerfile на помилки)
+  # Linter 
   linter:
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +17,7 @@ jobs:
         with:
           dockerfile: Dockerfile
 
-  # 2 та 3. Джоб: Збірка та Пуш у Github Container Registry (ghcr.io)
+  # Збірка та Пуш у Github Container Registry (ghcr.io)
   build-and-push:
     needs: linter
     runs-on: ubuntu-latest
